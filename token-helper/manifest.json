@@ -1,0 +1,14 @@
+{
+  "description": "Access token helper",
+  "manifest_version": 3,
+  "name": "api-access-token",
+  "version": "1.0",
+
+  "permissions": ["action", "scripting", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Click to show an alert"
+  }
+}

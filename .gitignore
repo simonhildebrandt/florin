@@ -10,3 +10,4 @@ ui-debug.log
 
 dev/index.js
 public/index.js
+functions/.env

@@ -6,16 +6,35 @@
   "author": "Simon Hildebrandt <simonhildebrandt@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "serve": "web-dev-server -p 9000 -r dev --app-index dev/index.html --open --watch",
-    "build": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js",
-    "watch": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --watch",
-    "build_prod": "yarn esbuild src/index.jsx --bundle --outfile=public/index.js"
+    "serve": "web-dev-server -p 9000 -r dev --open --watch  --app-index dev/index.html",
+    "build": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --define:LWL_KEY=\"'$LWL_KEY'\" --define:API_HOST=\"'$API_HOST'\"",
+    "watch": "yarn esbuild src/index.jsx --bundle --outfile=dev/index.js --watch --define:LWL_KEY=\"'$LWL_KEY'\" --define:API_HOST=\"'$API_HOST'\"",
+    "emulator": "firebase emulators:start",
+    "build_prod": "yarn esbuild src/index.jsx --bundle --outfile=public/index.js --define:LWL_KEY=\"'$LWL_KEY'\" --define:API_HOST=\"'$API_HOST'\"",
+    "deploy_all": "firebase deploy --only functions,hosting"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "esbuild": "^0.14.18",
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.8.1",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@tanstack/react-table": "^8.10.7",
     "@web/dev-server": "^0.4.6",
+    "axios": "^1.7.9",
+    "d3": "^7.9.0",
+    "debounce": "^2.2.0",
+    "esbuild": "^0.14.18",
+    "firebase-tools": "^12.6.2",
+    "framer-motion": "^4",
+    "live-server": "^1.2.1",
+    "navigo": "^8.11.1",
+    "navigo-react": "^2.0.3",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-icons": "^5.4.0",
+    "react-select": "^5.10.0",
+    "swr": "^2.3.2",
+    "use-debounce": "^10.0.4"
   }
 }
